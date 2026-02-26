@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genealogy You | Contact / Family Information Form</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Internal CSS (page-specific) -->
+  <style>
+    /* Contact page: a gentle background highlight behind the form */
+    .form-wrap{
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Genealogy You</a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="getting-started.html">Getting Started with Genealogy</a>
+        <a href="research.html">Research Resources</a>
+        <a href="tips.html">Family History Tips</a>
+        <a href="contact.html" aria-current="page">Contact / Family Information Form</a>
+      </nav>
+
+      <a class="btn" href="signin.html">Sign in</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h1 style="margin: 0 0 14px; font-size: 1.9rem;">Contact / Family Information Form</h1>
+
+      <section class="form-wrap" aria-label="Contact form">
+        <form action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
+          <div class="form-grid">
+            <div>
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+
+            <div>
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+            </div>
+
+            <div>
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" placeholder="Family line question" required>
+            </div>
+
+            <div>
+              <label for="message">Your Message / Family Information:</label>
+              <textarea id="message" name="message" rows="6" cols="50" placeholder="Share what you know about your family line..." required></textarea>
+              <p class="help">Include names, dates, locations, and any documents you already have.</p>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="privacy" name="privacyAck" required>
+              <label for="privacy" style="margin: 0; font-weight: 600;">
+                I understand that my information will be handled with privacy.
+              </label>
+            </div>
+
+            <div class="actions">
+              <button class="btn" type="submit" style="border-color: transparent;">Submit</button>
+              <span class="help">Opens your submission in a new tab.</span>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Copyright © Year Site Title</p>
+      <p>Contact Info</p>
+    </div>
+  </footer>
+</body>
+</html>
