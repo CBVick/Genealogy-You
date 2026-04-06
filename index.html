@@ -1,79 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genealogy You | Home</title>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Internal CSS (page-specific) -->
-  <style>
-    /* Home page: slightly stronger hero accent to match the wireframe feel */
-    .hero{
-      border-left: 8px solid rgba(11, 92, 171, .35);
-    }
-  </style>
+  <link rel="stylesheet" href="/Genealogy-You/styles.css">
 </head>
-
 <body>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">Genealogy You</a>
+      <a href="index.html" class="brand">Genealogy You</a>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="getting-started.html">Getting Started with Genealogy</a>
-        <a href="research.html">Research Resources</a>
-        <a href="tips.html">Family History Tips</a>
-        <a href="contact.html">Contact / Family Information Form</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="research.html">Research</a>
+        <a href="tips.html">Tips</a>
+        <a href="signin.html" class="btn">Sign In</a>
       </nav>
-
-      <!-- Inline CSS (small, intentional example) -->
-      <a class="btn" href="signin.html" style="box-shadow: 0 10px 25px rgba(0,0,0,.18);">
-        Sign in
-      </a>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
+
       <section class="hero">
-        <h1>Welcome to Our Genealogy Site!</h1>
+        <h1>Welcome to Genealogy You</h1>
         <p>
-          Discover your family history and connect with your ancestors. Our site provides resources,
-          tips, and tools to help you on your genealogical journey.
-        </p>
-        <p>
-          Whether you're just starting out or are an experienced researcher, you'll find valuable information here.
+          Discover your family history, explore helpful genealogy resources, and learn practical
+          tips for building your family tree. This website is designed to help beginners start
+          researching and organizing their family stories.
         </p>
       </section>
 
-      <section class="grid" aria-label="Highlights">
-        <article class="card">
-          <h2>Getting Started</h2>
-          <p>New to genealogy? Start here with our beginner's guide and essential first steps.</p>
-        </article>
+      <div class="grid">
+        <section class="card">
+          <h2><a href="getting-started.html">Getting Started with Genealogy</a></h2>
+          <p>
+            Learn how to begin your genealogy journey by collecting names, dates, family stories,
+            and important records.
+          </p>
+        </section>
 
-        <article class="card">
-          <h2>Research Resources</h2>
-          <p>Explore a curated list of online databases, archives, and historical records.</p>
-        </article>
+        <section class="card">
+          <h2><a href="research.html">Research Resources</a></h2>
+          <p>
+            Explore useful online databases, government records, cemetery resources, and other
+            tools that can help you trace your family history.
+          </p>
+        </section>
 
-        <article class="card">
-          <h2>Family History Tips</h2>
-          <p>Expert advice and strategies to help you overcome research challenges.</p>
-        </article>
-      </section>
+        <section class="card">
+          <h2><a href="tips.html">Family History Tips</a></h2>
+          <p>
+            Review helpful tips for staying organized, verifying facts, and making steady progress
+            in your family history research.
+          </p>
+        </section>
+      </div>
+
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>Copyright © 2023 Genealogy Site Title</p>
-      <p>Contact Info: <a href="mailto:info@genealogysite.com">info@genealogysite.com</a></p>
+    <div class="footer-inner">
+      <p>&copy; 2026 Genealogy You. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
