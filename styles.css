@@ -1,4 +1,8 @@
-/* styles.css (External CSS) */
+/* styles.css */
+
+/* =========================
+   VARIABLES
+========================= */
 :root{
   --ink:#1f2937;
   --muted:#6b7280;
@@ -11,15 +15,16 @@
   --radius:16px;
   --max:1100px;
   --gap:24px;
-  font-synthesis-weight:none;
 }
 
+/* =========================
+   GLOBAL RESET
+========================= */
 *{
   box-sizing:border-box;
 }
 
-html,
-body{
+html, body{
   height:100%;
   margin:0;
   padding:0;
@@ -27,8 +32,7 @@ body{
 }
 
 body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
   color:var(--ink);
   background:var(--bg);
   line-height:1.45;
@@ -38,12 +42,22 @@ a{
   color:inherit;
 }
 
+/* =========================
+   LAYOUT
+========================= */
 .container{
   max-width:var(--max);
   margin:0 auto;
   padding:0 20px;
 }
 
+.main{
+  padding:28px 0 36px;
+}
+
+/* =========================
+   HEADER
+========================= */
 .site-header{
   background:var(--brand);
   color:#fff;
@@ -60,12 +74,11 @@ a{
 
 .brand{
   font-weight:800;
-  letter-spacing:.2px;
   font-size:1.25rem;
   text-decoration:none;
-  white-space:nowrap;
 }
 
+/* NAV */
 .nav{
   display:flex;
   align-items:center;
@@ -81,12 +94,13 @@ a{
   font-size:.95rem;
 }
 
-.nav a:hover,
-.nav a:focus-visible{
+.nav a:hover{
   background:rgba(255,255,255,.16);
-  outline:none;
 }
 
+/* =========================
+   BUTTONS
+========================= */
 .btn{
   border:1px solid rgba(255,255,255,.45);
   background:#fff;
@@ -97,7 +111,11 @@ a{
   text-decoration:none;
   display:inline-flex;
   align-items:center;
-  gap:8px;
+}
+
+button.btn{
+  border:1px solid rgba(11,92,171,.45);
+  cursor:pointer;
 }
 
 .btn:hover{
@@ -108,10 +126,9 @@ a{
   transform:translateY(1px);
 }
 
-.main{
-  padding:28px 0 36px;
-}
-
+/* =========================
+   HERO
+========================= */
 .hero{
   background:var(--card);
   border:1px solid var(--border);
@@ -128,14 +145,16 @@ a{
 .hero p{
   margin:8px 0;
   color:var(--muted);
-  max-width:72ch;
 }
 
+/* =========================
+   GRID + CARDS
+========================= */
 .grid{
   margin-top:22px;
   display:grid;
   gap:var(--gap);
-  grid-template-columns:repeat(3, minmax(0,1fr));
+  grid-template-columns:repeat(3, 1fr);
 }
 
 .card{
@@ -151,38 +170,36 @@ a{
   font-size:1.25rem;
 }
 
-.card h3{
-  margin:0 0 8px;
-  font-size:1.1rem;
-}
-
 .card p{
-  margin:0;
   color:var(--muted);
 }
 
-.site-footer{
-  background:var(--brand);
-  color:#fff;
-  margin-top:20px;
+/* =========================
+   LIST + LINK STYLING (Research Page Fix)
+========================= */
+.card ul{
+  padding-left:18px;
+  margin-top:10px;
 }
 
-.footer-inner{
-  padding:18px 20px;
-  text-align:center;
-  font-size:.95rem;
+.card li{
+  margin-bottom:8px;
+  line-height:1.4;
 }
 
-.footer-inner p{
-  margin:4px 0;
+.card a{
+  color:var(--brand);
+  font-weight:600;
+  text-decoration:none;
 }
 
-.footer-inner a{
-  color:#fff;
-  font-weight:700;
+.card a:hover{
   text-decoration:underline;
 }
 
+/* =========================
+   FORM
+========================= */
 .form-wrap{
   background:var(--card);
   border:1px solid var(--border);
@@ -199,103 +216,48 @@ a{
 
 label{
   font-weight:700;
-  display:block;
-  margin-bottom:6px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea{
+input, textarea{
   width:100%;
-  padding:10px 12px;
+  padding:10px;
   border:1px solid var(--border);
   border-radius:12px;
-  font-size:1rem;
-  background:#fff;
 }
 
 textarea{
   min-height:140px;
-  resize:vertical;
-}
-
-.help{
-  color:var(--muted);
-  font-size:.92rem;
-  margin-top:6px;
 }
 
 .checkbox-row{
   display:flex;
-  align-items:flex-start;
   gap:10px;
-}
-
-.checkbox-row input{
-  margin-top:4px;
 }
 
 .actions{
   display:flex;
   gap:12px;
-  align-items:center;
 }
 
-/* Button styling for form submit buttons */
-button.btn{
-  border:1px solid rgba(11,92,171,.45);
-  background:#fff;
-  color:var(--brand-2);
-  padding:8px 12px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  cursor:pointer;
+/* =========================
+   FOOTER
+========================= */
+.site-footer{
+  background:var(--brand);
+  color:#fff;
+  margin-top:20px;
 }
 
-button.btn:hover{
-  filter:brightness(.98);
+.footer-inner{
+  padding:18px;
+  text-align:center;
 }
 
-button.btn:active{
-  transform:translateY(1px);
-}
-
-/* Research page / card list styling */
-.card ul{
-  padding-left:18px;
-  margin-top:10px;
-  margin-bottom:0;
-}
-
-.card li{
-  margin-bottom:8px;
-  line-height:1.4;
-  color:var(--ink);
-}
-
-.card a{
-  color:var(--brand);
-  font-weight:600;
-  text-decoration:none;
-}
-
-.card a:hover,
-.card a:focus-visible{
-  text-decoration:underline;
-  outline:none;
-}
-
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 900px){
   .grid{
     grid-template-columns:1fr;
-  }
-
-  .header-inner{
-    padding:10px 0;
   }
 }
