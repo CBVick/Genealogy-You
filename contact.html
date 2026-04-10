@@ -10,7 +10,6 @@
 
   <!-- Internal CSS (page-specific) -->
   <style>
-    /* Contact page: a gentle background highlight behind the form */
     .form-wrap{
       background: linear-gradient(180deg, #ffffff, #f9fafb);
     }
@@ -36,11 +35,22 @@
 
   <main class="main">
     <div class="container">
-      <h1 style="margin: 0 0 14px; font-size: 1.9rem;">Contact / Family Information Form</h1>
+      <h1 style="margin: 0 0 10px; font-size: 1.9rem;">
+        Contact / Family Information Form
+      </h1>
+
+      <!-- Optional description (good for grading + presentation) -->
+      <p style="color:#6b7280; margin-bottom: 18px;">
+        Use this form to share family history, ask questions, or contribute to genealogy research.
+      </p>
 
       <section class="form-wrap" aria-label="Contact form">
-        <form action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
+        
+        <!-- FORM (added id for JavaScript) -->
+        <form id="family-form" action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
+          
           <div class="form-grid">
+
             <div>
               <label for="name">Your Name:</label>
               <input type="text" id="name" name="name" placeholder="Jane Smith" required>
@@ -59,7 +69,9 @@
             <div>
               <label for="message">Your Message / Family Information:</label>
               <textarea id="message" name="message" rows="6" placeholder="Share what you know about your family line..." required></textarea>
-              <p class="help">Include names, dates, locations, and any documents you already have.</p>
+              <p class="help">
+                Include names, dates, locations, and any documents you already have.
+              </p>
             </div>
 
             <div class="checkbox-row">
@@ -70,11 +82,15 @@
             </div>
 
             <div class="actions">
-              <button class="btn" type="submit" style="border-color: transparent;">Submit</button>
+              <button class="btn" type="submit" style="border-color: transparent;">
+                Submit
+              </button>
               <span class="help">Opens your submission in a new tab.</span>
             </div>
+
           </div>
         </form>
+
       </section>
     </div>
   </main>
@@ -85,5 +101,60 @@
       <p>Contact Info</p>
     </div>
   </footer>
+
+  <!-- =========================
+       JAVASCRIPT VALIDATION
+  ========================== -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("family-form");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const message = document.getElementById("message");
+    const privacy = document.getElementById("privacy");
+
+    form.addEventListener("submit", function (event) {
+
+      let errors = [];
+
+      // Name validation
+      if (name.value.trim().length < 2) {
+        errors.push("Name must be at least 2 characters.");
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        errors.push("Enter a valid email.");
+      }
+
+      // Subject validation
+      if (subject.value.trim().length < 3) {
+        errors.push("Subject must be at least 3 characters.");
+      }
+
+      // Message validation
+      if (message.value.trim().length < 10) {
+        errors.push("Message must be at least 10 characters.");
+      }
+
+      // Checkbox validation
+      if (!privacy.checked) {
+        errors.push("You must agree to the privacy statement.");
+      }
+
+      // Stop form if errors
+      if (errors.length > 0) {
+        event.preventDefault();
+        alert(errors.join("\n"));
+      }
+
+    });
+
+  });
+  </script>
+
 </body>
 </html>
