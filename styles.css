@@ -175,7 +175,7 @@ button.btn{
 }
 
 /* =========================
-   LIST + LINK STYLING (Research Page Fix)
+   LIST + LINK STYLING
 ========================= */
 .card ul{
   padding-left:18px;
@@ -198,45 +198,71 @@ button.btn{
 }
 
 /* =========================
-   FORM
+   FORM (IMPROVED)
 ========================= */
 .form-wrap{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:22px;
+  padding:24px;
   box-shadow:var(--shadow);
   max-width:760px;
+  margin:auto;
 }
 
 .form-grid{
   display:grid;
-  gap:14px;
+  gap:16px;
 }
 
 label{
   font-weight:700;
+  margin-bottom:4px;
+  display:block;
 }
 
 input, textarea{
   width:100%;
-  padding:10px;
+  padding:12px;
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:10px;
+  font-size:0.95rem;
+  transition:0.2s ease;
+}
+
+/* 🔥 NEW: focus effect */
+input:focus, textarea:focus{
+  outline:none;
+  border-color:var(--brand);
+  box-shadow:0 0 0 2px rgba(11,92,171,0.15);
+}
+
+/* 🔥 NEW: error highlight (if you add later) */
+input:invalid, textarea:invalid{
+  border-color:#dc2626;
 }
 
 textarea{
   min-height:140px;
+  resize:vertical;
 }
 
 .checkbox-row{
   display:flex;
   gap:10px;
+  align-items:flex-start;
 }
 
 .actions{
   display:flex;
+  align-items:center;
   gap:12px;
+  flex-wrap:wrap;
+}
+
+.help{
+  font-size:0.85rem;
+  color:var(--muted);
 }
 
 /* =========================
