@@ -1,73 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sign In | Genealogy You</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
+  <style>
+    .form-wrap{
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
+    }
+
+    .live-form-box{
+      max-width: 760px;
+      margin: 30px auto 0;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .live-form-box h2{
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .live-form-box p{
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .live-form-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand">Genealogy You</a>
+      <a class="brand" href="index.html">Genealogy You</a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="getting-started.html">Getting Started</a>
         <a href="research.html">Research</a>
         <a href="tips.html">Tips</a>
-        <a href="signin.html" class="btn">Sign In</a>
+        <a href="signin.html" aria-current="page">Sign In</a>
       </nav>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
-      <section class="hero">
-        <h1>Sign In</h1>
-        <p>
-          Sign in below to stay connected and receive genealogy updates, family history resources,
-          and helpful research information.
-        </p>
-      </section>
+      <h1 style="margin: 0 0 10px; font-size: 1.9rem;">Sign In</h1>
 
-      <section class="form-wrap">
-        <form class="form-grid" action="#" method="post">
-          <div>
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
-          </div>
+      <p style="color:#6b7280; margin-bottom: 18px;">
+        Sign in below to stay connected and receive genealogy updates, family history resources, and helpful research information.
+      </p>
 
-          <div>
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address">
-          </div>
+      <section class="form-wrap" aria-label="Registration form demo">
+        <form id="registration-form" novalidate>
+          <div class="form-grid">
 
-          <div>
-            <label for="message">Tell Us What You Are Researching</label>
-            <textarea id="message" name="message" placeholder="Share a little about your family history interests"></textarea>
-            <p class="help">This form is a sample sign-in and interest form for genealogy visitors.</p>
-          </div>
+            <div>
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+            </div>
 
-          <div class="checkbox-row">
-            <input type="checkbox" id="updates" name="updates">
-            <label for="updates">I would like to receive genealogy updates and family history tips.</label>
-          </div>
+            <div>
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+            </div>
 
-          <div class="actions">
-            <button type="submit" class="btn">Submit</button>
+            <div>
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div>
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+            </div>
+
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div>
+              <label for="confirm-password">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+            </div>
+
+            <div>
+              <label for="surname">Family Last Name / Surname:</label>
+              <input type="text" id="surname" name="surname" placeholder="Optional genealogy surname">
+            </div>
+
+            <div>
+              <label for="origin">Country or Region of Origin:</label>
+              <input type="text" id="origin" name="origin" placeholder="Optional place of origin">
+            </div>
+
+            <div>
+              <label for="research-goal">Research Goal:</label>
+              <select id="research-goal" name="research-goal">
+                <option value="">Select an option</option>
+                <option value="Build a family tree">Build a family tree</option>
+                <option value="Find ancestors">Find ancestors</option>
+                <option value="Learn genealogy">Learn genealogy</option>
+                <option value="Connect with relatives">Connect with relatives</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button class="btn" type="submit" style="border-color: transparent;">
+                Validate Demo Form
+              </button>
+              <span class="help">This checks the fields but does not store data.</span>
+            </div>
+
           </div>
         </form>
+      </section>
+
+      <section class="live-form-box" aria-label="Live submission form">
+        <h2>Submit Your Information</h2>
+        <p>
+          To save your registration and genealogy information, use the official Microsoft Form.
+        </p>
+
+        <div class="live-form-actions">
+          <a class="btn" href="https://forms.cloud.microsoft/r/dhUZYt44BV" target="_blank" rel="noopener noreferrer">
+            Open Microsoft Form
+          </a>
+          <span class="help">This opens the live form in a new tab and stores responses there.</span>
+        </div>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <p>&copy; 2026 Genealogy You. All rights reserved.</p>
+    <div class="container footer-inner">
+      <p>© 2026 Genealogy You. All rights reserved.</p>
     </div>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("registration-form");
+
+      const firstName = document.getElementById("first-name");
+      const lastName = document.getElementById("last-name");
+      const username = document.getElementById("username");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirm-password");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let errors = [];
+
+        if (firstName.value.trim().length < 2) {
+          errors.push("First name must be at least 2 characters.");
+        }
+
+        if (lastName.value.trim().length < 2) {
+          errors.push("Last name must be at least 2 characters.");
+        }
+
+        if (username.value.trim().length < 3) {
+          errors.push("Username must be at least 3 characters.");
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+          errors.push("Enter a valid email address.");
+        }
+
+        if (password.value.length < 6) {
+          errors.push("Password must be at least 6 characters.");
+        }
+
+        if (password.value !== confirmPassword.value) {
+          errors.push("Passwords do not match.");
+        }
+
+        if (errors.length > 0) {
+          alert(errors.join("\n"));
+        } else {
+          alert("Demo form validated successfully. Use the Microsoft Form below to save your information.");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
