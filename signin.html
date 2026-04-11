@@ -35,12 +35,11 @@
       <h1 style="margin-bottom: 10px;">Sign In</h1>
 
       <p style="color:#6b7280; margin-bottom: 18px;">
-        Enter your information to stay connected with genealogy updates and resources.
+        Enter your information below. After validation, the official Microsoft Form will open so your information can be submitted and stored.
       </p>
 
       <section class="form-wrap">
         <form id="signin-form">
-
           <div class="form-grid">
 
             <div>
@@ -59,12 +58,11 @@
             </div>
 
             <div class="actions">
-              <button class="btn" type="submit">Sign In</button>
-              <span class="help">Demo only (no data stored)</span>
+              <button class="btn" type="submit">Continue to Microsoft Form</button>
+              <span class="help">Validation happens here. Submission is completed in Microsoft Forms.</span>
             </div>
 
           </div>
-
         </form>
       </section>
 
@@ -79,7 +77,6 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-
       const form = document.getElementById("signin-form");
       const firstName = document.getElementById("first-name");
       const lastName = document.getElementById("last-name");
@@ -104,13 +101,12 @@
         }
 
         if (errors.length > 0) {
-          alert(errors.join("\n"));
+          alert(errors.join("\\n"));
         } else {
-          alert("Sign-in successful (demo only).");
+          alert("Validation successful. The Microsoft Form will open next.");
+          window.open("https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=GUsqSzXRDkKLsrHNI4mYzOfxR0Oo-EdEir4jNwBZzm9UQVpQTjFPTlBKVDlFN1JFR1BJNFMxTkZUNC4u", "_blank");
         }
-
       });
-
     });
   </script>
 
