@@ -3,12 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Genealogy You | Contact / Family Information Form</title>
+  <title>Genealogy You | Registration Form</title>
 
-  <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Internal CSS (page-specific) -->
   <style>
     .form-wrap{
       background: linear-gradient(180deg, #ffffff, #f9fafb);
@@ -26,7 +24,7 @@
         <a href="getting-started.html">Getting Started with Genealogy</a>
         <a href="research.html">Research Resources</a>
         <a href="tips.html">Family History Tips</a>
-        <a href="contact.html" aria-current="page">Contact / Family Information Form</a>
+        <a href="contact.html" aria-current="page">Registration Form</a>
       </nav>
 
       <a class="btn" href="signin.html">Sign in</a>
@@ -36,125 +34,133 @@
   <main class="main">
     <div class="container">
       <h1 style="margin: 0 0 10px; font-size: 1.9rem;">
-        Contact / Family Information Form
+        Genealogy You Registration &amp; Family Information Form
       </h1>
 
-      <!-- Optional description (good for grading + presentation) -->
       <p style="color:#6b7280; margin-bottom: 18px;">
-        Use this form to share family history, ask questions, or contribute to genealogy research.
+        This form allows users to create an account and share genealogy information.
+        The data collected simulates a real-world registration system and supports genealogy research.
       </p>
 
-      <section class="form-wrap" aria-label="Contact form">
-        
-        <!-- FORM (added id for JavaScript) -->
-        <form id="family-form" action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
-          
+      <section class="form-wrap" aria-label="Registration form">
+        <form id="registration-form" action="https://wp.zybooks.com/form-viewer.php" method="POST" target="_blank">
           <div class="form-grid">
 
             <div>
-              <label for="name">Your Name:</label>
-              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
             </div>
 
             <div>
-              <label for="email">Your Email:</label>
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+            </div>
+
+            <div>
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div>
+              <label for="email">Email Address:</label>
               <input type="email" id="email" name="email" placeholder="jane@email.com" required>
             </div>
 
             <div>
-              <label for="subject">Subject:</label>
-              <input type="text" id="subject" name="subject" placeholder="Family line question" required>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
 
             <div>
-              <label for="message">Your Message / Family Information:</label>
-              <textarea id="message" name="message" rows="6" placeholder="Share what you know about your family line..." required></textarea>
-              <p class="help">
-                Include names, dates, locations, and any documents you already have.
-              </p>
+              <label for="confirm-password">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
             </div>
 
-            <div class="checkbox-row">
-              <input type="checkbox" id="privacy" name="privacyAck" required>
-              <label for="privacy" style="margin: 0; font-weight: 600;">
-                I understand that my information will be handled with privacy.
-              </label>
+            <div>
+              <label for="surname">Family Last Name / Surname:</label>
+              <input type="text" id="surname" name="surname" placeholder="Optional genealogy surname">
+            </div>
+
+            <div>
+              <label for="origin">Country or Region of Origin:</label>
+              <input type="text" id="origin" name="origin" placeholder="Optional place of origin">
+            </div>
+
+            <div>
+              <label for="research-goal">Research Goal:</label>
+              <select id="research-goal" name="research-goal">
+                <option value="">Select an option</option>
+                <option value="Build a family tree">Build a family tree</option>
+                <option value="Find ancestors">Find ancestors</option>
+                <option value="Learn genealogy">Learn genealogy</option>
+                <option value="Connect with relatives">Connect with relatives</option>
+              </select>
             </div>
 
             <div class="actions">
               <button class="btn" type="submit" style="border-color: transparent;">
-                Submit
+                Register
               </button>
               <span class="help">Opens your submission in a new tab.</span>
             </div>
 
           </div>
         </form>
-
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Copyright © Year Site Title</p>
-      <p>Contact Info</p>
+      <p>Copyright © Genealogy You</p>
+      <p>Created for course project</p>
     </div>
   </footer>
 
-  <!-- =========================
-       JAVASCRIPT VALIDATION
-  ========================== -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("registration-form");
+      const firstNameInput = document.getElementById("first-name");
+      const lastNameInput = document.getElementById("last-name");
+      const usernameInput = document.getElementById("username");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirm-password");
 
-    const form = document.getElementById("family-form");
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const subject = document.getElementById("subject");
-    const message = document.getElementById("message");
-    const privacy = document.getElementById("privacy");
+      form.addEventListener("submit", function (event) {
+        const errors = [];
 
-    form.addEventListener("submit", function (event) {
+        if (firstNameInput.value.trim().length < 2) {
+          errors.push("First name must be at least 2 characters long.");
+        }
 
-      let errors = [];
+        if (lastNameInput.value.trim().length < 2) {
+          errors.push("Last name must be at least 2 characters long.");
+        }
 
-      // Name validation
-      if (name.value.trim().length < 2) {
-        errors.push("Name must be at least 2 characters.");
-      }
+        if (usernameInput.value.trim().length < 3) {
+          errors.push("Username must be at least 3 characters long.");
+        }
 
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email.value.trim())) {
-        errors.push("Enter a valid email.");
-      }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          errors.push("Please enter a valid email address.");
+        }
 
-      // Subject validation
-      if (subject.value.trim().length < 3) {
-        errors.push("Subject must be at least 3 characters.");
-      }
+        if (passwordInput.value.length < 6) {
+          errors.push("Password must be at least 6 characters long.");
+        }
 
-      // Message validation
-      if (message.value.trim().length < 10) {
-        errors.push("Message must be at least 10 characters.");
-      }
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          errors.push("Passwords do not match.");
+        }
 
-      // Checkbox validation
-      if (!privacy.checked) {
-        errors.push("You must agree to the privacy statement.");
-      }
-
-      // Stop form if errors
-      if (errors.length > 0) {
-        event.preventDefault();
-        alert(errors.join("\n"));
-      }
-
+        if (errors.length > 0) {
+          event.preventDefault();
+          alert(errors.join("\n"));
+        }
+      });
     });
-
-  });
   </script>
-
 </body>
 </html>
