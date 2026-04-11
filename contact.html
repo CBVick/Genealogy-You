@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Genealogy You | Registration Form</title>
+
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -20,23 +21,6 @@
       padding: 24px;
       box-shadow: 0 10px 25px rgba(0,0,0,.08);
     }
-
-    .live-form-box h2{
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .live-form-box p{
-      color: #6b7280;
-      margin-bottom: 18px;
-    }
-
-    .live-form-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
   </style>
 </head>
 
@@ -47,126 +31,108 @@
 
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="getting-started.html">Getting Started with Genealogy</a>
+        <a href="getting-started.html">Getting Started</a>
         <a href="research.html">Research Resources</a>
         <a href="tips.html">Family History Tips</a>
-        <a href="contact.html" aria-current="page">Registration Form</a>
+        <a href="contact.html" aria-current="page">Registration</a>
       </nav>
-
-      <a class="btn" href="signin.html">Sign in</a>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
       <h1 style="margin: 0 0 10px; font-size: 1.9rem;">
-        Genealogy You Registration &amp; Family Information Form
+        Genealogy You Registration & Family Information Form
       </h1>
 
       <p style="color:#6b7280; margin-bottom: 18px;">
-        This page demonstrates a registration form design with client-side validation.
-        To submit and store information, please use the official Microsoft Form below.
+        This form allows users to create an account and share genealogy information.
+        The data collected supports genealogy research and simulates a real-world system.
       </p>
 
+      <!-- DEMO FORM -->
       <section class="form-wrap" aria-label="Registration form demo">
         <form id="registration-form" novalidate>
           <div class="form-grid">
 
             <div>
               <label for="first-name">First Name:</label>
-              <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+              <input type="text" id="first-name" required>
             </div>
 
             <div>
               <label for="last-name">Last Name:</label>
-              <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+              <input type="text" id="last-name" required>
             </div>
 
             <div>
               <label for="username">Username:</label>
-              <input type="text" id="username" name="username" placeholder="Enter your username" required>
+              <input type="text" id="username" required>
             </div>
 
             <div>
               <label for="email">Email Address:</label>
-              <input type="email" id="email" name="email" placeholder="jane@email.com" required>
-            </div>
-
-            <div>
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-
-            <div>
-              <label for="confirm-password">Confirm Password:</label>
-              <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required>
+              <input type="email" id="email" required>
             </div>
 
             <div>
               <label for="surname">Family Last Name / Surname:</label>
-              <input type="text" id="surname" name="surname" placeholder="Optional genealogy surname">
+              <input type="text" id="surname">
             </div>
 
             <div>
               <label for="origin">Country or Region of Origin:</label>
-              <input type="text" id="origin" name="origin" placeholder="Optional place of origin">
+              <input type="text" id="origin">
             </div>
 
             <div>
               <label for="research-goal">Research Goal:</label>
-              <select id="research-goal" name="research-goal">
+              <select id="research-goal">
                 <option value="">Select an option</option>
-                <option value="Build a family tree">Build a family tree</option>
-                <option value="Find ancestors">Find ancestors</option>
-                <option value="Learn genealogy">Learn genealogy</option>
-                <option value="Connect with relatives">Connect with relatives</option>
+                <option>Build a family tree</option>
+                <option>Find ancestors</option>
+                <option>Learn genealogy</option>
+                <option>Connect with relatives</option>
               </select>
             </div>
 
             <div class="actions">
-              <button class="btn" type="submit" style="border-color: transparent;">
-                Validate Demo Form
-              </button>
-              <span class="help">This checks the fields but does not store data.</span>
+              <button class="btn" type="submit">Validate Form</button>
+              <span class="help">Demo validation only (no data stored).</span>
             </div>
 
           </div>
         </form>
       </section>
 
-      <section class="live-form-box" aria-label="Live submission form">
+      <!-- MICROSOFT FORM -->
+      <div class="live-form-box">
         <h2>Submit Your Information</h2>
-        <p>
-          To save your registration and genealogy information, use the official Microsoft Form.
-        </p>
+        <p>Use the official Microsoft Form below to store your information.</p>
 
-        <div class="live-form-actions">
-          <a class="btn" href="https://forms.cloud.microsoft/r/dhUZYt44BV" target="_blank" rel="noopener noreferrer">
-            Open Microsoft Form
-          </a>
-          <span class="help">This opens the live form in a new tab and stores responses there.</span>
-        </div>
-      </section>
+        <a class="btn" href="https://forms.cloud.microsoft/r/dhUZYt44BV" target="_blank">
+          Open Microsoft Form
+        </a>
+      </div>
+
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>Copyright © Genealogy You</p>
-      <p>Created for course project</p>
+      <p>© Genealogy You</p>
     </div>
   </footer>
 
+  <!-- JAVASCRIPT VALIDATION -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("registration-form");
 
+      const form = document.getElementById("registration-form");
       const firstName = document.getElementById("first-name");
       const lastName = document.getElementById("last-name");
       const username = document.getElementById("username");
       const email = document.getElementById("email");
-      const password = document.getElementById("password");
-      const confirmPassword = document.getElementById("confirm-password");
 
       form.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -190,21 +156,16 @@
           errors.push("Enter a valid email address.");
         }
 
-        if (password.value.length < 6) {
-          errors.push("Password must be at least 6 characters.");
-        }
-
-        if (password.value !== confirmPassword.value) {
-          errors.push("Passwords do not match.");
-        }
-
         if (errors.length > 0) {
           alert(errors.join("\n"));
         } else {
-          alert("Demo form validated successfully. Use the Microsoft Form below to save your information.");
+          alert("Form validated successfully. Please use the Microsoft Form to submit.");
         }
+
       });
+
     });
   </script>
+
 </body>
 </html>
