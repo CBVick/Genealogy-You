@@ -5,37 +5,27 @@
   box-sizing: border-box;
 }
 
-/* COLOR THEME */
-:root {
-  --main-blue: #1f4e79;
-  --light-gray: #f4f4f4;
-  --card-gray: #e9ecef;
-  --text-color: #333;
-}
-
 /* BODY */
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--light-gray);
-  color: var(--text-color);
   line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 /* HEADER */
 header {
-  background-color: var(--main-blue);
+  background-color: #2c3e50;
   color: white;
-  text-align: center;
   padding: 20px 0;
+  text-align: center;
 }
 
 header h1 {
-  color: white;
-  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav ul {
   list-style: none;
 }
@@ -45,90 +35,110 @@ nav ul li {
   margin: 0 15px;
 }
 
-nav ul li a {
+nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav ul li a:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
-/* MAIN */
-main {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 20px;
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
 }
 
-/* TOP WELCOME BOX */
-.welcome-box {
-  background-color: var(--card-gray);
-  padding: 30px;
-  border-radius: 12px;
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+/* HERO TEXT OVERLAY */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hero-text h2 {
+  margin-bottom: 10px;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 20px;
+}
+
+/* INTRO SECTION */
+.intro {
+  text-align: center;
   margin-bottom: 30px;
 }
 
-.welcome-box h2 {
-  color: var(--main-blue);
+.intro h2 {
   margin-bottom: 10px;
 }
 
-/* CARD CONTAINER (3 BOXES) */
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+/* SOCIAL (FACEBOOK) */
+.social {
+  text-align: center;
+  margin: 20px 0;
 }
 
-/* INDIVIDUAL CARDS */
-.card {
-  flex: 1;
-  min-width: 280px;
-  background-color: var(--card-gray);
-  padding: 25px;
-  border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card h3 {
-  color: var(--main-blue);
-  margin-bottom: 10px;
-}
-
-/* HOVER EFFECT (subtle but nice) */
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* LINKS */
-a {
+.social a {
   color: #1877f2;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-a:hover {
+.social a:hover {
   text-decoration: underline;
+}
+
+/* IMAGE CENTER CLASS (for other pages too) */
+.image-center {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-center img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* FOOTER */
 footer {
-  background-color: var(--main-blue);
+  background-color: #2c3e50;
   color: white;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-/* MOBILE */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   nav ul li {
     display: block;
     margin: 10px 0;
   }
 
-  .card-container {
-    flex-direction: column;
+  .hero-text {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .image-center img {
+    max-width: 95%;
   }
 }
