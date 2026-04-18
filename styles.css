@@ -77,6 +77,11 @@ a{
   font-weight:800;
   font-size:1.25rem;
   text-decoration:none;
+  color:#ffffff;
+}
+
+.brand:hover{
+  color:#e5eef9;
 }
 
 /* =========================
@@ -95,10 +100,12 @@ a{
   border-radius:10px;
   font-weight:600;
   font-size:.95rem;
+  color:#ffffff;
 }
 
 .nav a:hover{
   background:rgba(255,255,255,.16);
+  color:#ffffff;
 }
 
 /* =========================
@@ -144,6 +151,7 @@ button.btn{
 .hero h1{
   margin:0 0 8px;
   font-size:2rem;
+  color:var(--brand-2);
 }
 
 .hero p{
@@ -172,6 +180,7 @@ button.btn{
 .card h2{
   margin:0 0 8px;
   font-size:1.25rem;
+  color:var(--brand-2);
 }
 
 .card p{
@@ -223,6 +232,7 @@ label{
   font-weight:700;
   margin-bottom:4px;
   display:block;
+  color:var(--ink);
 }
 
 input,
