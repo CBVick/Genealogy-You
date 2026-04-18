@@ -289,3 +289,7 @@ textarea{
     grid-template-columns:1fr;
   }
 }
+.site-header .btn{
+  color: #0b5cab !important;   /* force visible blue text */
+  background: #ffffff !important;
+}
