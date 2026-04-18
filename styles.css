@@ -1,286 +1,144 @@
-/* styles.css */
-
-/* =========================
-   VARIABLES
-========================= */
-:root{
-  --ink:#1f2937;
-  --muted:#6b7280;
-  --bg:#f3f4f6;
-  --card:#ffffff;
-  --brand:#0b5cab;
-  --brand-2:#0a4b8a;
-  --border:#d1d5db;
-  --shadow:0 10px 25px rgba(0,0,0,.08);
-  --radius:16px;
-  --max:1100px;
-  --gap:24px;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* =========================
-   GLOBAL RESET
-========================= */
-*{
-  box-sizing:border-box;
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-html, body{
-  height:100%;
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
+/* HEADER */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.45;
+header h1 {
+  margin-bottom: 10px;
 }
 
-a{
-  color:inherit;
+/* NAVIGATION */
+nav ul {
+  list-style: none;
 }
 
-/* =========================
-   LAYOUT
-========================= */
-.container{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:0 20px;
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
-.main{
-  padding:28px 0 36px;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* =========================
-   HEADER
-========================= */
-.site-header{
-  background:var(--brand);
-  color:#fff;
-  box-shadow:0 6px 20px rgba(0,0,0,.18);
+nav a:hover {
+  text-decoration: underline;
 }
 
-.header-inner{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:wrap;
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
 }
 
-.brand{
-  font-weight:800;
-  font-size:1.25rem;
-  text-decoration:none;
+.hero img {
+  width: 100%;
+  height: auto;
 }
 
-/* =========================
-   NAV
-========================= */
-.nav{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
+/* HERO TEXT OVERLAY */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.nav a{
-  text-decoration:none;
-  padding:8px 10px;
-  border-radius:10px;
-  font-weight:600;
-  font-size:.95rem;
+.hero-text h2 {
+  margin-bottom: 10px;
 }
 
-.nav a:hover{
-  background:rgba(255,255,255,.16);
+/* MAIN CONTENT */
+main {
+  padding: 20px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-.btn{
-  border:1px solid rgba(255,255,255,.45);
-  background:#fff;
-  color:var(--brand-2);
-  padding:8px 12px;
-  border-radius:999px;
-  font-weight:800;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
+/* INTRO SECTION */
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-button.btn{
-  border:1px solid rgba(11,92,171,.45);
-  cursor:pointer;
+.intro h2 {
+  margin-bottom: 10px;
 }
 
-.btn:hover{
-  filter:brightness(.98);
+/* SOCIAL (FACEBOOK) */
+.social {
+  text-align: center;
+  margin: 20px 0;
 }
 
-.btn:active{
-  transform:translateY(1px);
+.social a {
+  color: #1877f2;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* =========================
-   HERO
-========================= */
-.hero{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  box-shadow:var(--shadow);
+.social a:hover {
+  text-decoration: underline;
 }
 
-.hero h1{
-  margin:0 0 8px;
-  font-size:2rem;
+/* IMAGE CENTER CLASS (for other pages too) */
+.image-center {
+  text-align: center;
+  margin: 20px 0;
 }
 
-.hero p{
-  margin:8px 0;
-  color:var(--muted);
+.image-center img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================
-   GRID + CARDS
-========================= */
-.grid{
-  margin-top:22px;
-  display:grid;
-  gap:var(--gap);
-  grid-template-columns:repeat(3, 1fr);
+/* FOOTER */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
-}
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
 
-.card h2{
-  margin:0 0 8px;
-  font-size:1.25rem;
-}
+  .hero-text {
+    width: 90%;
+    font-size: 14px;
+  }
 
-.card p{
-  color:var(--muted);
-}
-
-/* =========================
-   LIST + LINK STYLING
-========================= */
-.card ul{
-  padding-left:18px;
-  margin-top:10px;
-}
-
-.card li{
-  margin-bottom:8px;
-  line-height:1.4;
-}
-
-.card a{
-  color:var(--brand);
-  font-weight:600;
-  text-decoration:none;
-}
-
-.card a:hover{
-  text-decoration:underline;
-}
-
-/* =========================
-   FORM
-========================= */
-.form-wrap{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
-  box-shadow:var(--shadow);
-  max-width:760px;
-  margin:auto;
-}
-
-.form-grid{
-  display:grid;
-  gap:16px;
-}
-
-label{
-  font-weight:700;
-  margin-bottom:4px;
-  display:block;
-}
-
-input,
-textarea,
-select{
-  width:100%;
-  padding:12px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  font-size:0.95rem;
-  transition:0.2s ease;
-  background:#fff;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-  outline:none;
-  border-color:var(--brand);
-  box-shadow:0 0 0 2px rgba(11,92,171,0.15);
-}
-
-textarea{
-  min-height:140px;
-  resize:vertical;
-}
-
-.actions{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.help{
-  font-size:0.85rem;
-  color:var(--muted);
-}
-
-/* =========================
-   FOOTER
-========================= */
-.site-footer{
-  background:var(--brand);
-  color:#fff;
-  margin-top:20px;
-}
-
-.footer-inner{
-  padding:18px;
-  text-align:center;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px){
-  .grid{
-    grid-template-columns:1fr;
+  .image-center img {
+    max-width: 95%;
   }
 }
